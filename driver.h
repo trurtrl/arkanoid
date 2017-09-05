@@ -36,7 +36,8 @@ private:
 public:
     Driver(std::vector<Obstacle*> &vec_obs, Ball* ball, int col)
     :vector_obstacles{vec_obs}, ball{ball}, collision{col} 
-    {};  
+    {};
+    ~Driver(){};
     void move_ball(Ball* ball);
     void print_obstacles();
     bool is_in_vector_deletable_obstacle();

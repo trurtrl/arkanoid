@@ -64,7 +64,9 @@ int main(int argc, char**argv) {
    
     std::cout << "Game over" << std::endl;
     game.print_obstacles();    
-    
+
+    std::cout << "ball : " << ball->x() << " , " << ball->y() << std::endl;
+    delete ball;
     
     return 0;
 }

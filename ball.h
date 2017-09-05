@@ -25,7 +25,7 @@ private:
 
 public:
     Ball(int pos_X, int pos_Y, float angle, int radius, float speed); 
-    ~Ball();
+    ~Ball(){};
     void set_x(int);
     void set_y(int);
     void set_direction(float new_angle); // changing an angle out of the class

@@ -35,7 +35,13 @@ struct Settings
 //std::vector<Obstacle*> Settings::vector_obstacles {};
 
 
-struct Object{
+class Object{
+private:
+    Object (const Object& );
+    Object& operator=(const Object& );
+    Object (Object&&);
+    Object& operator=(Object&& );
+public:
     Point* p1;
     Point* p2;
     Point* p3;

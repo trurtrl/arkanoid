@@ -9,7 +9,7 @@
 
 #include<string>
 #include<vector>
-#include<stdexcept>
+//#include<stdexcept>
 #include<iostream>
 
 struct Point {
@@ -33,7 +33,10 @@ private:
  * a=y2-y1; b=x2-x1; c=x2y1-y2x1; length2=(y2-y1)^2 + (x2-x1)^2; length = sqrt(length2)  
  * Variables a,b,c,length, length2 are calculated here for saving time later 
 */
-    
+    Line (const Line&);
+    Line& operator=(const Line&);
+    Line (Line&&);
+    Line& operator=(Line&&);
     
 public:
     Line(Point* begin, Point* end, char s)
@@ -45,7 +48,7 @@ public:
             _length2 = set_length2();            
             _length = set_length();
         };
-    ~Line(){ };
+    ~Line(){delete p_begin, p_end; };
     char side;
     float set_a();
     float set_b();
@@ -68,6 +71,12 @@ private:
     Line* _right;
     Line* _down;
     Line* _left;
+    
+    Obstacle (const Obstacle&);
+    Obstacle& operator=(const Obstacle&);
+    Obstacle (Obstacle&&);
+    Obstacle& operator=(Obstacle&&);
+    
 public:
     int counter; // defines quantity of collision after which the object can be destoyed
     bool destroyable;
